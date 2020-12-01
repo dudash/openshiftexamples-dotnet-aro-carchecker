@@ -50,6 +50,15 @@ namespace CarChecker.Server
             services.AddRazorPages();
 
             services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, ApplicationUserClaimsPrincipalFactory>();
+            
+            // setup cookie config for cross-site
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.SameSite = SameSiteMode.Unspecified;
+            });
+            services.AddAntiforgery(opts => {
+                opts.Cookie.SameSite = SameSiteMode.Unspecified;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -55,10 +55,10 @@ namespace CarChecker.Server
             // setup cookie config for cross-site
             services.ConfigureApplicationCookie(options =>
             {
-                options.Cookie.SameSite = SameSiteMode.Unspecified;
+                options.Cookie.SameSite = SameSiteMode.Lax;
             });
             services.AddAntiforgery(opts => {
-                opts.Cookie.SameSite = SameSiteMode.Unspecified;
+                opts.Cookie.SameSite = SameSiteMode.Lax;
             });
         }
 

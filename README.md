@@ -20,9 +20,11 @@ This is a great sample which has a lot of Blazor + ASP.NET integrations such as:
 - Progressive Web App (PWA)
 
 ## What ARO provides:
+- Reduce operational overhead and focus on quickly delivering applications
 - .NET Core source-2-image (s2i) which containerizes the app for us
-- TODO
-- TODO
+- deploy applications in a consistent environment
+- Secured and patched base container images for .NET 
+- Ability to trigger build/deploy and pipelines (from code change and other triggers)
 
 
 ## How to run this thing

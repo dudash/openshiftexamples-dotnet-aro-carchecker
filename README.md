@@ -29,24 +29,12 @@ This is a great sample which has a lot of Blazor + ASP.NET integrations such as:
 
 ## How to run this thing
 ### Deploy to OpenShift (Server)
-> Note: If you don't already have an ARO cluster and you want to learn how to create one, check out some instructions [here](here).
+> Note: If you don't already have an ARO cluster and you want to learn how to create one, check out some instructions [here](https://docs.microsoft.com/en-us/azure/openshift/tutorial-create-cluster).
 
-By simply adding a .s2i/environment file letting OpenShift know which .csproj to deploy, we can easily containerize and run this app using Azure Red Hat OpenShift (ARO). If you want to deploy that way, it's as simple as using the oc CLI:
-```
-TODO
-```
+By simply adding a .s2i/environment file to this repo, I let OpenShift know which .csproj to deploy. You can easily containerize and run this app using Azure Red Hat OpenShift (ARO). If you want to deploy this app to your cluster, it's as simple as using the oc CLI command `oc new-app` or the plus button in the ARO web console.
 
-### Deploy to OpenShift (as WASM)
-WebAssembly is an really cool [feature of Blazer][1] and something we can also serve out from an ARO cluster. We can do that as follows:
-```
-TODO
-```
-
-### Running locally - for developers
-TBD
-
-### Running in ARO - for developers
-As a developer you might want to iterate a bunch before deploying your code through a pipeline for release. There is VSCode Plugin for OpenShift to simplify that. TBD more
+### Running for development
+We can use `dotnet` tooling to run locally. And for a nice combination of local + ARO testing get the [odo CLI](https://odo.dev/) tool the `odo push` command (or [VSCode plugin](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-openshift-connector)).
 
 ## Build Code, Containers, Scan, and more in a Pipeline
 We can put this app into a larger release flow example using pipelines. You can see that in action by doing the following:
